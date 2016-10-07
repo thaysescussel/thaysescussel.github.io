@@ -1,36 +1,93 @@
-<!DOCTYPE html>
-<!--
-	Forty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+---
+layout: default
+---
+<article class="postWrapper">
+  <section class="section--first is-darkBackgrounded u-table">
+    <div class="section-backgroundImage">
 
-{% include head.html %}
+      {% if page.image.feature %}
+        <img class="post-featuredImage" src="{{ page.image.feature | prepend: site.baseurl_featured_img }}" style="
+        {% if page.image.topPosition %}
+          top:{{ page.image.topPosition }};
+        {% endif %}
+        " alt="">
+      {% endif %}
 
-<body>
+    </div>
+    <div class="section-gradient
+    {% if page.bgGradientOpacity == "darker" %}
+      section-gradient--darker
+    {% elsif page.bgGradientOpacity == "lighter" %}
+      section-gradient--lighter
+    {% endif %}
+    "></div>
+    <div class="section-title is-darkBackgrounded u-tableCell u-verticalAlignMiddle">
+      <div class="container">
+        <h2>{{ page.title }}</h2>
+        <div class="postMeta-wrapper">
+          <ul class="postMeta">
+            <li class="postMeta-datetime">
+              <time datetime="{{ page.date }}">
+                {{ page.date | date_to_string }}
+              </time>
+            </li>
+            <li class="postMeta-author">
+              By {{ site.author.name }}
+            </li>
+            <li class="postMeta-tags">
+              {{ page.categories }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section--last">
+    <div class="container container--content">
+      <div class="content-body">
 
-    {% include header.html %} 
-    
-    
-<!-- Main -->
-<div id="main" class="alt">
+        {{ content }}
 
-<!-- One -->
-<section id="one">
-	<div class="inner">
-		<header class="major">
-			<h1>{{ page.title }}</h1>
-		</header>
-		{% if page.image %}<span class="image main"><img src="{{ site.baseurl }}/{{ page.image }}" alt="" /></span>{% endif %}
-		<p>{{ content }}</p>
-	</div>
-</section>
+      </div>
+    </div>
+    <hr class="u-clearHr"/>
+    <hr class="u-clearHr"/>
+    <hr/>
+    <div class="container container--content">
+      <div class="content-body">
+        {% include subscribe.html %}
+        {% include comments.html %}
+      </div>
+    </div>
+  </section>
+  <footer class="postFooter">
+    {% if page.previous.url %}
+      <section class="section--prePost is-darkBackgrounded u-table">
+        <div class="section-backgroundImage section-backgroundImage--previousPage">
+          <img class="post-featuredImage"
+          {% if page.previous.image.feature %}
+            src="{{ page.previous.image.feature | prepend: site.baseurl_featured_img }}"
+          {% endif %}
+          style="top:0" alt="">
+        </div>
+        <div class="section-gradient
+        {% if page.previous.bgGradientOpacity == "darker" %}
+          section-gradient--darker
+        {% elsif page.previous.bgGradientOpacity == "lighter" %}
+          section-gradient--lighter
+        {% endif %}
+        "></div>
+        <div class="section-title u-tableCell u-verticalAlignMiddle">
+          <div class="container">
+            <h4>Next story:</h4>
+            <a class="prev" href="{{page.previous.url}}">
+              <h2>{{page.previous.title}}</h2>
+            </a>
+          </div>
+        </div>
+      </section>
+    {% endif %}
+  </footer>
+</article>
 
-</div>
-
-    {% include footer.html %}
-
-</body>
-
-</html>
+{% include modal.html %}
