@@ -1,20 +1,18 @@
 
 # Syntax highlighting
-markdown:            redcarpet
 highlighter:         pygments
 
 # Permalinks
 permalink:           pretty
-#relative_permalinks: true
 
 # Setup
 timezone:            your timezone # eg. Asia/Kathmandu
-locale:              your locale language # eg. en_us
+locale:              en_uk # eg. en_us
 name:				         site name
 title:               site title
 tagline:             'tagline'
 description:         'description'
-url:                 site url
+url:                 thaysescussel.github.io
 rss:                 rss feed url
 baseurl:             '/'
 baseurl_posts_img:   '/assets/images/posts/'
@@ -25,10 +23,10 @@ icon:                your site icon path # /assets/img/icon.png [best 300px X 30
 disqus:              disqus_shortname # get it on https://disqus.com/admin/
 
 author:
-  name:           	 your name
-  url:            	 your site url
-  facebook:          username
-  twitter:           username
+  name:           	 Thayse Scussel
+  url:            	 https://thaysescussel.github.io
+  facebook:          thaysescussel
+  twitter:           thaysescussel
   google_plus:       username
   linkedin:          username
   dribbble:          username
