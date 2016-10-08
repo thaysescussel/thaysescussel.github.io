@@ -1,5 +1,6 @@
 
 # Syntax highlighting
+markdown:            redcarpet
 highlighter:         pygments
 
 # Permalinks
@@ -8,8 +9,8 @@ permalink:           pretty
 # Setup
 timezone:            your timezone # eg. Asia/Kathmandu
 locale:              en_uk # eg. en_us
-name:				         site name
-title:               site title
+name:				         Thayse Scussel
+title:               Thayse Scussel
 tagline:             'tagline'
 description:         'description'
 url:                 thaysescussel.github.io
